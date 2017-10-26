@@ -82,7 +82,14 @@
 
 
     // timing
-
+      // Tells you how long it took to run a function
+      console.time('fetching data');
+      fetch('https://api.github.com/users/esun0703')
+        .then(data => data.json())
+        .then(data => {
+          console.timeEnd('fetching data');//run timeEnd and use the same string you started with.
+          console.log(data);
+        });
   </script>
 </body>
 </html>
